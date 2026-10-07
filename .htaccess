@@ -1,0 +1,16 @@
+Options -Indexes
+RewriteEngine On
+
+# Serve existing files and directories as-is
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Front controller
+RewriteRule ^ index.php [L]
+
+# Security: block hidden / storage
+RewriteRule ^(storage|\.git) - [F,L]
+
+ErrorDocument 404 /index.php
+ErrorDocument 500 /500.html
