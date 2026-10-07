@@ -1,0 +1,10 @@
+/storage/logs/*
+!/storage/logs/.gitkeep
+/storage/rate-limits/*
+!/storage/rate-limits/.gitkeep
+.env
+.env.local
+*.log
+.DS_Store
+Thumbs.db
+/vendor/
