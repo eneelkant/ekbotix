@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: /sitemap.xml
+Disallow: /storage/
+Disallow: /template/
+Disallow: /app/
+Disallow: /products/email-verifier/tests/
