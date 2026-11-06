@@ -1,10 +1,15 @@
-# Ekbotix — GitHub Pages site
+# Ekbotix — GitHub Pages portfolio
 
-This directory is the static GitHub Pages version of the Ekbotix portfolio.
+The static portfolio is published from this `docs/` directory.
 
-## Why this is separate from the PHP app
+## Sitemap
 
-GitHub Pages serves static HTML, CSS, JavaScript and assets. It does **not** execute PHP, so the existing root PHP application, Email Verifier API and server-side contact form remain unchanged. The Pages site is a presentation-only portfolio; project links lead to source repositories or product code.
+- `/` — Executive homepage
+- `/about/` — Executive profile and operating principles
+- `/expertise/` — MarTech architecture, lifecycle operations, lead routing and measurement
+- `/case-studies/` — Anonymized illustrative engagement patterns
+- `/stack/` — Technology landscape
+- `/contact/` — Advisory and collaboration contact routes
 
 ## Local preview
 
@@ -18,31 +23,28 @@ Open http://localhost:8000.
 
 ## Deployment
 
-The workflow at `.github/workflows/pages.yml` publishes this `docs/` directory whenever changes land on `main`.
+The workflow at `.github/workflows/pages.yml` publishes `docs/` to GitHub Pages on pushes to `main`. The repository project-site URL is:
 
-1. Open repository **Settings → Pages**.
-2. Under **Build and deployment**, select **GitHub Actions** as the source.
-3. Merge the Pages site branch into `main` (or push changes to `docs/` on `main`).
-4. Watch **Actions → Deploy GitHub Pages** until the workflow succeeds.
-5. The expected project-site URL is https://eneelkant.github.io/ekbotix/
+https://eneelkant.github.io/ekbotix/
 
-The workflow uses the official GitHub Pages artifact and deploy actions. No external hosting, PHP runtime or paid domain is required.
+Check **Settings → Pages** and choose **GitHub Actions** as the source if Pages is not yet enabled. Monitor **Actions → Deploy GitHub Pages** for deployment status.
 
-## Add a custom domain later
+## Custom domain later
 
-When ready, add the domain in **Settings → Pages → Custom domain**. GitHub will provide the DNS instructions for your chosen apex domain or subdomain. Configure the DNS records at your registrar, wait for DNS verification, then enable **Enforce HTTPS** when available.
+Add the chosen domain in **Settings → Pages → Custom domain**, configure the DNS records shown by GitHub at your registrar, wait for verification and enable HTTPS when available. Keep internal links relative so the site continues to work at the repository path and at a custom-domain root.
 
-The Pages workflow is configured with `BASE_PATH: /ekbotix` for the repository URL. For a custom domain at the site root, change this workflow variable to an empty string (or `/`) before publishing the domain version. Review canonical and sitemap URLs at that time.
+## Content integrity
 
-## Editing content
+- The 16-year experience positioning is based on the profile brief supplied for this website.
+- Case studies are explicitly illustrative and anonymized, not represented as verified client engagements or testimonials.
+- Quantified business outcomes, client names, certifications and credential levels are not published until substantiated and approved for public use.
+- The stack page lists platforms and tools as a technology landscape, not as a claim of certification in each product.
+- The contact page does not contain a fake/nonfunctional form. Add the exact LinkedIn profile and Calendly URLs when available.
+- GitHub Pages is static hosting and does not execute PHP or process form submissions.
 
-Edit `docs/index.html` for copy and sections, `docs/assets/site.css` for design and `docs/assets/site.js` for behavior. Keep all internal asset links relative so the repository project path works. External social/profile links can be updated in the HTML.
+## Editing
 
-## Scope
-
-- Static portfolio and project showcase
-- Responsive mobile navigation
-- SEO title and description
-- Open Graph metadata
-- Reduced-motion support
-- No secrets, API keys, contact-form backend or private data
+- `docs/index.html` — homepage
+- `docs/<page>/index.html` — individual pages
+- `docs/assets/site.css` — shared styling
+- `docs/assets/site.js` — shared navigation behavior
